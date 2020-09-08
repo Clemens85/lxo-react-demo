@@ -1,8 +1,8 @@
 import React from 'react';
 import {ExampleInfo} from "../../shared/ExampleInfo";
-import {UserDetails} from "../shared/UserDetails";
-import {UsersContainer} from "../shared/UsersContainer";
-import {User} from "../../shared/UserService";
+import {UserDetails} from "../components/UserDetails";
+import {UsersContainer} from "../components/UsersContainer";
+import {User} from "../../shared/user/UserService";
 
 export default function FetchDataBasic() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import {User} from "../../shared/UserService";
+import {User} from "../../shared/user/UserService";
 
 export interface CreatedUsersListProps {
   users: User[];

@@ -1,5 +1,5 @@
 import React from "react";
-import {Todo} from "../../shared/UserService";
+import {Todo} from "../../shared/user/UserService";
 import {TodoDetails} from "./TodoDetails";
 
 export type TodoListProps = {

@@ -1,12 +1,12 @@
 import {ExampleInfo} from "../../shared/ExampleInfo";
 import React, {useState} from "react";
-import {UserDetails} from "../shared/UserDetails";
-import {UsersContainer} from "../shared/UsersContainer";
+import {UserDetails} from "../components/UserDetails";
+import {UsersContainer} from "../components/UsersContainer";
 import {findEntityById} from "../../shared/Utils";
 import cloneDeep from "lodash/cloneDeep";
-import {TodoList} from "../shared/TodoList";
+import {TodoList} from "../components/TodoList";
 import {AsyncButton} from "../../shared/AsyncButton";
-import {findTodosOfUserAsync, User, UserWithTodos} from "../../shared/UserService";
+import {findTodosOfUserAsync, User, UserWithTodos} from "../../shared/user/UserService";
 
 export default function FetchDataOnAction() {
   return (

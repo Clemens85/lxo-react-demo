@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {getRandomInt, isStringEmpty} from "./Utils";
+import {getRandomInt, isStringEmpty} from "../Utils";
 
 export interface UserAttributes {
   name: string;

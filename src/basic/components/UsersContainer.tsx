@@ -1,7 +1,7 @@
 import React from "react";
 import {useAsync} from "react-async-hook";
 import {Callout} from "../../shared/Callout";
-import {findUsersAsync, User} from "../../shared/UserService";
+import {findUsersAsync, User} from "../../shared/user/UserService";
 
 export type UsersContainerProps = {
   render(users: User[]): React.ReactElement;

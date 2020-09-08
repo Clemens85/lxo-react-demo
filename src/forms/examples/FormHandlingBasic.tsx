@@ -1,9 +1,9 @@
 import {ExampleInfo} from "../../shared/ExampleInfo";
 import React, {useState} from "react";
 import {FormProvider, useForm} from "react-hook-form";
-import {createUserAsync, newEmptyUserAttributes, User, UserAttributes} from "../../shared/UserService";
-import {GenderSelectControl} from "../shared/GenderSelectControl";
-import {CreatedUsersList} from "../shared/CreatedUsersList";
+import {createUserAsync, newEmptyUserAttributes, User, UserAttributes} from "../../shared/user/UserService";
+import {GenderSelectControl} from "../components/GenderSelectControl";
+import {CreatedUsersList} from "../components/CreatedUsersList";
 import {Callout} from "../../shared/Callout";
 import {isStringEmpty} from "../../shared/Utils";
 

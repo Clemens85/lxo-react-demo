@@ -1,5 +1,5 @@
 import React from "react";
-import {User} from "../../shared/UserService";
+import {User} from "../../shared/user/UserService";
 
 export const UserDetails: React.FC<{user: User}> = ({user}) => {
   const {name, email, gender} = user;

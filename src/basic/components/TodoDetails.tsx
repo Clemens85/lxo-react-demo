@@ -1,4 +1,4 @@
-import {Todo} from "../../shared/UserService";
+import {Todo} from "../../shared/user/UserService";
 import {LocalDate} from "../../shared/date/LocalDate";
 import {Time} from "../../shared/date/Time";
 import React from "react";

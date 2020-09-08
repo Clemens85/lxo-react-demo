@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import {createUserAsync, newEmptyUserAttributes, User, UserAttributes} from "../../shared/UserService";
+import {createUserAsync, newEmptyUserAttributes, User, UserAttributes} from "../../shared/user/UserService";
 import {FormProvider, useForm} from "react-hook-form";
 import {ExampleInfo} from "../../shared/ExampleInfo";
-import {GenderSelectControl} from "../shared/GenderSelectControl";
-import {CreatedUsersList} from "../shared/CreatedUsersList";
-import {USER_VALIDATION_SCHEMA} from "../../shared/UserValidationSchema";
-import {TextInput} from "../shared/TextInput";
+import {GenderSelectControl} from "../components/GenderSelectControl";
+import {CreatedUsersList} from "../components/CreatedUsersList";
+import {USER_VALIDATION_SCHEMA} from "../../shared/user/UserValidationSchema";
+import {TextInput} from "../components/TextInput";
 import {yupResolver} from "@hookform/resolvers";
 
 export default function FormHandlingWithValidation() {
