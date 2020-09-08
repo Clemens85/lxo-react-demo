@@ -8,3 +8,11 @@ export function findEntityById(entities: any[], id: number): any {
   }
   return result[0];
 }
+
+export function getRandomInt(max: number): number {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+export function isStringEmpty(s: string|undefined|null): boolean {
+  return !s || s.length === 0;
+}

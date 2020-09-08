@@ -1,5 +1,31 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Overview
+
+The aim of this demo project is to show the usage of some recommended libraries / functions in the React ecosystem.
+
+#### What's included
+
+Show the usage of:
+* React Router for navigation purposes
+* React Hooks for state handling
+* Fetch data using axios (when mounting components and on user actions)
+* Using a custom hook for fetching data asynchronously
+* Composing React components
+* Date-fns as a library for handling date functionalities
+* React-Hook-Form library for form handling
+* YUP as frontend validation library (integrated into React-Hook-Form)
+* React-Helmet for dynmaically rendering HTML titles for pages / routes. 
+
+#### What it is NOT
+
+The examples are no real world examples by purpose and aren't necessarily to be considered 'Best Practice'.
+
+Furthermore they are only a collection of recommended tools / techniques and don't replace an indepth documentation read.
+
+Finally they are definitely not a good example of how to layout HTML/CSS. There are used only some very crude inline
+CSS styles, instead of using some high sophisticated HTML/CSS tools/techniques. 
+
 ## Available Scripts
 
 In the project directory, you can run:

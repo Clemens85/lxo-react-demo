@@ -1,10 +1,14 @@
 import axios from 'axios';
+import {getRandomInt, isStringEmpty} from "./Utils";
 
-export interface User {
-  id: number;
+export interface UserAttributes {
   name: string;
   email: string;
   gender: string;
+}
+
+export interface User extends UserAttributes {
+  id: number;
   status: string;
 }
 
@@ -44,3 +48,19 @@ export const findTodosOfUserAsync = async(userId: number): Promise<Todo[]> => {
   }
   return resultBody.data;
 };
+
+export const createUserAsync = async(user: UserAttributes): Promise<User> => {
+  const userToSave = { ...user, id: getRandomInt(10000), status: 'mocked' };
+  if (isStringEmpty(userToSave.name) || isStringEmpty(userToSave.email)) {
+    return Promise.reject('Invalid data!');
+  }
+  return Promise.resolve(userToSave); // Mock user creation
+};
+
+export function newEmptyUserAttributes(): UserAttributes {
+  return {
+    name: '',
+    email: '',
+    gender: 'Female'
+  };
+}
