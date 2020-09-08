@@ -8,7 +8,7 @@ import BasicOverview from "./basic/BasicOverview";
 import FormOverview from "./forms/FormOverview";
 import { HelmetProvider } from 'react-helmet-async';
 import ReduxOverview from "./redux/ReduxOverview";
-import I18nOverview from "./i18n/I18n";
+import I18nOverview from "./i18n/I18nOverview";
 
 function ExampleApp() {
   return (

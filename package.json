@@ -21,8 +21,11 @@
     "date-fns": "^2.16.1",
     "react-helmet-async": "^1.0.6",
     "react-hook-form": "^6.7.2",
-    "yup": "latest",
-    "@hookform/resolvers": "latest"
+    "yup": "^0.29.3",
+    "@hookform/resolvers": "^0.1.0",
+    "react-i18next": "^11.7.2",
+    "i18next": "^19.7.0",
+    "i18next-browser-languagedetector": "^6.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

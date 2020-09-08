@@ -1,0 +1,4 @@
+{
+  "explanation": "Basic demo showing simple usage of localization lib i18next with plain texts and with interpolation and different translation files",
+  "page_title": "I18n Example"
+}

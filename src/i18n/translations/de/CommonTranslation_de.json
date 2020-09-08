@@ -1,0 +1,4 @@
+{
+  "explanation": "Einfaches Beispiel, welches zeigt wie Texte mithilfe der i18next Lib in verschiedene Dateien ausgelagert werden könnte (+ Interpolation)",
+  "page_title": "I18n Beispiel"
+}
