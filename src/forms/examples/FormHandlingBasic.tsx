@@ -33,7 +33,8 @@ export function FormHandlingBasic() {
   return (
       <div>
         <ExampleInfo nr={1}>
-          This example shows some very basic usage of react-hook-form library.
+          This example shows some very basic usage of react-hook-form library. <br/>
+          If you try e.g. to save a user without name then a global error will be shown.
         </ExampleInfo>
 
         <div style={{ padding: '15px', float: 'left'}}>

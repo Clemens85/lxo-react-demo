@@ -33,7 +33,7 @@ export default function FormHandlingWithValidation() {
   return (
       <div>
         <ExampleInfo nr={2}>
-          This example builds upon the above example, but includes also validation, and shows how to create custom input elements.
+          This example builds upon the above example, but includes also frontend validation using Yup, and shows how to create custom input elements.
         </ExampleInfo>
 
         <div style={{ padding: '15px', float: 'left'}}>
