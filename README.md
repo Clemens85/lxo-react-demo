@@ -15,7 +15,8 @@ Show the usage of:
 * Date-fns as a library for handling date functionalities
 * React-Hook-Form library for form handling
 * YUP as frontend validation library (integrated into React-Hook-Form)
-* React-Helmet for dynmaically rendering HTML titles for pages / routes. 
+* React-Helmet for dynmaically rendering HTML titles for pages / routes
+* react-testing-library for testing React components
 
 #### What it is NOT
 

@@ -50,11 +50,12 @@ export const findTodosOfUserAsync = async(userId: number): Promise<Todo[]> => {
 };
 
 export const createUserAsync = async(user: UserAttributes): Promise<User> => {
+  // Mock backend request
   const userToSave = { ...user, id: getRandomInt(10000), status: 'mocked' };
   if (isStringEmpty(userToSave.name) || isStringEmpty(userToSave.email)) {
     return Promise.reject('Invalid data!');
   }
-  return Promise.resolve(userToSave); // Mock user creation
+  return Promise.resolve(userToSave);
 };
 
 export function newEmptyUserAttributes(): UserAttributes {
