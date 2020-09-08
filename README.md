@@ -6,11 +6,11 @@ The aim of this demo project is to show the usage of some recommended libraries 
 
 #### What's included
 
-Show the usage of:
+Show the usage of (according also to this document (https://docs.google.com/document/d/11sZzEhMt3zZuJABcx_5v2tIHR9D_ZbC1hMDZ9Twfh9Q/edit?usp=sharing):
 * React Router for navigation purposes
 * React Hooks for state handling
 * Fetch data using axios (when mounting components and on user actions)
-* Using a custom hook for fetching data asynchronously
+* Using a custom hook for fetching data asynchronously (react-async-hook)
 * Composing React components
 * Date-fns as a library for handling date functionalities
 * React-Hook-Form library for form handling
