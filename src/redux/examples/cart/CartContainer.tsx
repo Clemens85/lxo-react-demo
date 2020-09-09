@@ -2,8 +2,9 @@ import React from "react";
 import {useSelector} from "react-redux";
 import {productsInCart} from "./CartReducer";
 import {RootState} from "../RootReducer";
-import {calculateTotalPrice, ProductInCart} from "../shared/ProductInCart";
+import {ProductInCart} from "../shared/ProductInCart";
 import CartItem from "./CartItem";
+import {calculateTotalPrice} from "../shared/ProductService";
 
 export default function CartContainer() {
 
