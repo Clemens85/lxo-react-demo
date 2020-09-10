@@ -20,7 +20,7 @@ export default function FetchDataOnAction() {
           <span>It additionally shows the usage of date-fns for Date/Time rendering.</span>
         </ExampleInfo>
         <div style={{marginTop: 15}}>
-          <UsersContainer render={users => <UserListWithTodos users={users}/>} limit={10} />
+          <UsersContainer render={users => <UserListWithTodos users={users}/>} limit={7} />
         </div>
       </>
   );
