@@ -25,8 +25,8 @@ export function FormHandlingBasic() {
       setCreatedUsers(createdUsers.concat(result));
       reset();
       setSubmitErrorMessage(null);
-    } catch (e) {
-      setSubmitErrorMessage(JSON.stringify(e));
+    } catch (rejectedResponse) {
+      setSubmitErrorMessage(JSON.stringify(rejectedResponse.data));
     }
   };
 
@@ -34,7 +34,7 @@ export function FormHandlingBasic() {
       <div>
         <ExampleInfo nr={1} helpLinks={["https://react-hook-form.com/"]}>
           This example shows some very basic usage of react-hook-form library. <br/>
-          If you try e.g. to save a user without name then a global error will be shown.
+          If you try e.g. to save a user without name then a global error will be shown (ugly).
         </ExampleInfo>
 
         <div style={{ padding: '15px', float: 'left'}}>

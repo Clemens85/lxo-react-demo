@@ -1,5 +1,6 @@
-import axios from 'axios';
+import axios, {AxiosResponse} from 'axios';
 import {getRandomInt, isStringEmpty} from "../Utils";
+import {IssueList} from "../issues/IssueList";
 
 export interface UserAttributes {
   name: string;
@@ -52,8 +53,14 @@ export const findTodosOfUserAsync = async(userId: number): Promise<Todo[]> => {
 export const createUserAsync = async(user: UserAttributes): Promise<User> => {
   // Mock backend request
   const userToSave = { ...user, id: getRandomInt(10000), status: 'mocked' };
-  if (isStringEmpty(userToSave.name) || isStringEmpty(userToSave.email)) {
-    return Promise.reject('Invalid data!');
+  if (isStringEmpty(userToSave.name)) {
+    return Promise.reject(newMocked406Response('name', 'Name is required'));
+  }
+  if (isStringEmpty(userToSave.email)) {
+    return Promise.reject(newMocked406Response('email', 'Email is required'));
+  }
+  if (userToSave.email === 'foo@bar.de') {
+    return Promise.reject(newMocked406Response('email', 'Email already exists (backend check)'));
   }
   return Promise.resolve(userToSave);
 };
@@ -65,3 +72,28 @@ export function newEmptyUserAttributes(): UserAttributes {
     gender: 'Female'
   };
 }
+
+
+function newMocked406Response(source: string, message: string): AxiosResponse {
+
+  const mockedResponse: AxiosResponse = {
+    status: 406,
+    statusText: "406",
+    data: newIssueList(source, message),
+    headers: [],
+    config: {}
+  };
+  return mockedResponse;
+}
+
+function newIssueList(source: string, message: string) : IssueList {
+  return {
+    issues: [
+      {
+        source: source,
+        i18nKey: message
+      }
+    ]
+  };
+}
+
