@@ -1,19 +1,30 @@
 import {createAction, createReducer, PayloadAction} from "@reduxjs/toolkit";
 import {findProductsAsync} from "../shared/ProductService";
 import {AppThunk} from "../Store";
+import cloneDeep from 'lodash/cloneDeep';
 import {Product} from "../shared/Product";
 
 interface ProductsState {
   productsById: Record<string, Product>;
   loading: boolean;
   error: string | null;
+  productsUntouched: Product[];
 }
 
 const initialState: ProductsState = {
   productsById: {},
   loading: true,
-  error: null
+  error: null,
+  productsUntouched: []
 };
+
+function setProductsIntoState(state: ProductsState, products: Product[]) {
+  state.productsById = products.reduce((accumulatedResult: Record<string, Product>, product) => {
+    accumulatedResult[product.id] = product;
+    return accumulatedResult;
+  }, {});
+  state.productsUntouched = cloneDeep(products);
+}
 
 const fetchProductsStart = createAction('fetchProductsStart');
 const fetchProductsFailure = createAction<string>('fetchProductsFailure');
@@ -29,10 +40,7 @@ const productsReducer = createReducer(initialState, {
   },
   fetchProductsSuccess: (state, action: PayloadAction<Product[]>) => {
     state.loading = false;
-    state.productsById = action.payload.reduce((recordResult: Record<string, Product>, product) => {
-      recordResult[product.id] = product;
-      return recordResult;
-    }, {});
+    setProductsIntoState(state, action.payload);
     state.error = null;
   },
   addToCart: (state: ProductsState, {payload}: PayloadAction<string>) => {
@@ -40,6 +48,9 @@ const productsReducer = createReducer(initialState, {
     const product = state.productsById[productId];
     if (product.inventory)
     product.inventory -= 1;
+  },
+  selectUser: (state: ProductsState) => {
+    setProductsIntoState(state, state.productsUntouched);
   }
 });
 export default productsReducer;
@@ -56,31 +67,3 @@ export function fetchProducts(): AppThunk {
     }
   }
 }
-
-// export default productsSlice.reducer;
-
-// const productsSlice = createSlice({
-//   name: 'products',
-//   initialState,
-//   reducers: {
-//     fetchPostsStart(state: ProductsState) {
-//       state.loading = true;
-//     },
-//     fetchPostsFailure(state: ProductsState, {payload}: PayloadAction<string>) {
-//       state.loading = false;
-//       state.error = payload;
-//     },
-//     fetchPostsSuccess(state: ProductsState, action: PayloadAction<Product[]>) {
-//       state.loading = false;
-//       state.items = action.payload;
-//       state.error = null;
-//     },
-//     addToCart(state: ProductsState, {payload}: PayloadAction<string>) {
-//       const productId = payload;
-//       const product = findEntityById(state.items, productId);
-//       product.inventory -= 1;
-//     }
-//   }
-// });
-
-// export const { fetchPostsSuccess, fetchPostsStart, fetchPostsFailure, addToCart } = productsSlice.actions;

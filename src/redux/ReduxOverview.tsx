@@ -12,7 +12,8 @@ export default function ReduxOverview() {
             Showing redux in an example is quite complicated due to it needs some more complex logic for showing its purposes. This example demonstrates a simple
             shopping cart and is inspired by the redux website. But we use the Redux toolkit library which allows us to use Redux in a more simpler way
             without writing dozens of boilerplate code which is normally needed to setup redux.<br/>
-            <strong>Note: </strong>Redux is not quite easy, so it is always reasonable to re-think if you really need it in your app!
+            By using a logging middleware the complete redux state flow can be seen in browser console.<br />
+            <strong>Note: </strong>Redux is not quite easy, so it is always reasonable to re-think if you really need it in your app.
           </ExampleInfo>
           <ShoppingCartExample />
         </section>

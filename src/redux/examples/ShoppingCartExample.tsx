@@ -6,11 +6,15 @@ import {Provider} from "react-redux";
 import store from './Store';
 import CartContainer from "./cart/CartContainer";
 import ProductsContainer from "./product/ProductsContainer";
+import UserShoppingSelection from "./user/UserShoppingSelection";
 
 export function ShoppingCartExample() {
 
   return (
       <Provider store={store}>
+        <div>
+          <UserShoppingSelection />
+        </div>
         <div>
           <ProductsContainer />
         </div>

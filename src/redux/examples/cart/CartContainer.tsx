@@ -11,6 +11,8 @@ export default function CartContainer() {
   const selectedProductsInCart = useSelector((state: RootState) => productsInCart(state)) as ProductInCart[];
   const hasProducts = selectedProductsInCart.length > 0;
 
+  const selectedUser = useSelector((state:RootState) => state.users.selectedUser);
+
   const renderCart = () => {
     if (!hasProducts) {
       return <em>Cart is empty.</em>;
@@ -33,7 +35,7 @@ export default function CartContainer() {
 
   return (
       <div style={{paddingLeft: '15px'}}>
-        <h2>Cart</h2>
+        <h2>Cart {selectedUser && <span> for {selectedUser.name}</span>}</h2>
         {renderCart()}
       </div>
   );

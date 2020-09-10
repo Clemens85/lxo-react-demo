@@ -20,16 +20,18 @@ const cartReducers = createReducer(initialState, {
     const quantity = state.quantityByProductId[productId] || 0;
     state.quantityByProductId[productId] = quantity + 1;
   },
+  selectUser: (state: CartState, action) => {
+    state.quantityByProductId = {};
+    state.addedProductIds = [];
+  }
 });
 export default cartReducers;
-
 
 
 const getProducts = (state: RootState) => state.products;
 const getAddedProductIds = (state: RootState) => state.cart.addedProductIds;
 const getQuantityByProductId = (state: RootState) => state.cart.quantityByProductId;
 
-// <any, any, ProductInCart[]>
 export const productsInCart = createSelector(
     [getProducts, getAddedProductIds, getQuantityByProductId],
     (productsState, addedProductIds, quantitiesByProductId) => {
