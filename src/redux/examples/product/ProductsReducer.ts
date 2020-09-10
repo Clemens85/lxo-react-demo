@@ -1,8 +1,10 @@
 import {createAction, createReducer, PayloadAction} from "@reduxjs/toolkit";
-import {findProductsAsync} from "../shared/ProductService";
+import {findProductsAsync} from "../../../shared/product/ProductService";
 import {AppThunk} from "../Store";
 import cloneDeep from 'lodash/cloneDeep';
-import {Product} from "../shared/Product";
+import {Product} from "../../../shared/product/Product";
+import { selectUser } from '../user/Actions';
+import { addToCart } from './Actions';
 
 interface ProductsState {
   productsById: Record<string, Product>;
@@ -31,25 +33,25 @@ const fetchProductsFailure = createAction<string>('fetchProductsFailure');
 const fetchProductsSuccess = createAction<Product[]>('fetchProductsSuccess');
 
 const productsReducer = createReducer(initialState, {
-  fetchProductsStart: (state) => {
+  [fetchProductsStart.type]: (state) => {
     state.loading = true;
   },
-  fetchProductsFailure: (state: ProductsState, {payload}: PayloadAction<string>) => {
+  [fetchProductsFailure.type]: (state: ProductsState, {payload}: PayloadAction<string>) => {
     state.loading = false;
     state.error = payload;
   },
-  fetchProductsSuccess: (state, action: PayloadAction<Product[]>) => {
+  [fetchProductsSuccess.type]: (state, action: PayloadAction<Product[]>) => {
     state.loading = false;
     setProductsIntoState(state, action.payload);
     state.error = null;
   },
-  addToCart: (state: ProductsState, {payload}: PayloadAction<string>) => {
+  [addToCart.type]: (state: ProductsState, {payload}: PayloadAction<string>) => {
     const productId = payload;
     const product = state.productsById[productId];
     if (product.inventory)
     product.inventory -= 1;
   },
-  selectUser: (state: ProductsState) => {
+  [selectUser.type]: (state: ProductsState) => {
     setProductsIntoState(state, state.productsUntouched);
   }
 });

@@ -1,6 +1,6 @@
 import React from "react";
 import ProductDetails from "../product/ProductDetails";
-import {ProductInCart} from "../shared/ProductInCart";
+import {ProductInCart} from "../../../shared/product/ProductInCart";
 
 export interface CartItemProps {
   productInCart: ProductInCart

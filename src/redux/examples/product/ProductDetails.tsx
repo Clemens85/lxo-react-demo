@@ -1,5 +1,5 @@
 import React from "react";
-import {Product} from "../shared/Product";
+import {Product} from "../../../shared/product/Product";
 
 export interface ProductDetailsProps {
   product: Product;

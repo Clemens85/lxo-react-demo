@@ -1,5 +1,7 @@
 import {createReducer, createSelector, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../RootReducer";
+import { selectUser } from '../user/Actions';
+import { addToCart } from '../product/Actions';
 
 interface CartState {
   addedProductIds: string[];
@@ -12,7 +14,7 @@ const initialState: CartState = {
 };
 
 const cartReducers = createReducer(initialState, {
-  addToCart: (state: CartState,  {payload}: PayloadAction<string>) => {
+  [addToCart.type]: (state: CartState,  {payload}: PayloadAction<string>) => {
     const productId = payload;
     if (state.addedProductIds.indexOf(productId) === -1) {
       state.addedProductIds.push(productId);
@@ -20,7 +22,7 @@ const cartReducers = createReducer(initialState, {
     const quantity = state.quantityByProductId[productId] || 0;
     state.quantityByProductId[productId] = quantity + 1;
   },
-  selectUser: (state: CartState, action) => {
+  [selectUser.type]: (state: CartState) => {
     state.quantityByProductId = {};
     state.addedProductIds = [];
   }

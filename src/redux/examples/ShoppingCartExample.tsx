@@ -1,6 +1,3 @@
-// TODO https://codesandbox.io/s/github/reduxjs/redux/tree/master/examples/shopping-cart?from-embed=&file=/src/containers/ProductsContainer.js
-//  https://redux.js.org/introduction/examples
-
 import React from 'react';
 import {Provider} from "react-redux";
 import store from './Store';
@@ -10,6 +7,7 @@ import UserShoppingSelection from "./user/UserShoppingSelection";
 
 export function ShoppingCartExample() {
 
+  // Normally the Provider and store configuration would be done in application root
   return (
       <Provider store={store}>
         <div>

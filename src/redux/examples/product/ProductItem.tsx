@@ -1,6 +1,6 @@
 import React from "react";
 import ProductDetails from "./ProductDetails";
-import {Product} from "../shared/Product";
+import {Product} from "../../../shared/product/Product";
 
 export interface ProductAddableProps {
   product: Product;

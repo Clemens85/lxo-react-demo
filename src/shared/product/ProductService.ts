@@ -5,6 +5,13 @@ export const findProductsAsync = async(): Promise<Product[]> => {
   return new Promise(resolve => setTimeout(resolve, 1000, _getMockedProducts()));
 };
 
+export const calculateTotalPrice = (items: ProductInCart[]): number => {
+  const result = items.reduce(
+      (total, product) => total + product.price * product.quantity,
+      0);
+  return result;
+};
+
 function _getMockedProducts(): Array<Product> {
   return [
     {
@@ -27,10 +34,3 @@ function _getMockedProducts(): Array<Product> {
     }
   ];
 }
-
-export const calculateTotalPrice = (items: ProductInCart[]): number => {
-  const result = items.reduce(
-      (total, product) => total + product.price * product.quantity,
-      0);
-  return result;
-};

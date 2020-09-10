@@ -1,5 +1,7 @@
 import {User} from "../../../shared/user/UserService";
 import {createReducer, PayloadAction} from "@reduxjs/toolkit";
+import { selectUser } from './Actions';
+
 
 interface UsersState {
   selectedUser: User | null;
@@ -9,7 +11,7 @@ const initialState: UsersState = {
 };
 
 const userReducers = createReducer(initialState, {
-  selectUser: (state: UsersState, {payload}: PayloadAction<User>) => {
+  [selectUser.type]: (state: UsersState, {payload}: PayloadAction<User>) => {
     state.selectedUser = payload;
   }
 });
