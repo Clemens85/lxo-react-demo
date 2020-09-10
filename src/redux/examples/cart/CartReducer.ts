@@ -2,6 +2,7 @@ import {createReducer, createSelector, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../RootReducer";
 import { selectUser } from '../user/Actions';
 import { addToCart } from '../product/Actions';
+import {ProductInCart} from "../../../shared/product/ProductInCart";
 
 interface CartState {
   addedProductIds: string[];
@@ -30,18 +31,18 @@ const cartReducers = createReducer(initialState, {
 export default cartReducers;
 
 
-const getProducts = (state: RootState) => state.products;
+const getProductsById = (state: RootState) => state.products.productsById;
 const getAddedProductIds = (state: RootState) => state.cart.addedProductIds;
 const getQuantityByProductId = (state: RootState) => state.cart.quantityByProductId;
 
 export const productsInCart = createSelector(
-    [getProducts, getAddedProductIds, getQuantityByProductId],
-    (productsState, addedProductIds, quantitiesByProductId) => {
+    [getProductsById, getAddedProductIds, getQuantityByProductId],
+    (productsById, addedProductIds, quantitiesByProductId) => {
       if (addedProductIds.length === 0) {
         return [];
       }
       return addedProductIds.map(id => ({
-        ...productsState.productsById[id],
+        ...productsById[id],
         quantity: quantitiesByProductId[id]
       }));
     }
