@@ -11,7 +11,11 @@ import {findTodosOfUserAsync, User, UserWithTodos} from "../../shared/user/UserS
 export default function FetchDataOnAction() {
   return (
       <>
-        <ExampleInfo nr={3}>
+        <ExampleInfo nr={3} helpLinks={[
+            "https://github.com/slorber/react-async-hook",
+            "https://usehooks.com/",
+            "https://date-fns.org/"
+        ]}>
           <span>This example builds upon the basic fetching data example above and shows furthermore how to load data on user actions</span><br />
           <span>It additionally shows the usage of date-fns for Date/Time rendering.</span>
         </ExampleInfo>

@@ -8,7 +8,13 @@ export default function ReduxOverview() {
       <>
         <HtmlTitle title="Redux Toolkit Example"/>
         <section>
-          <ExampleInfo nr={1}>
+          <ExampleInfo nr={1}
+                       helpLinks={[
+                           "https://redux-toolkit.js.org/",
+                           "https://blog.codecentric.de/2020/02/einfacheres-redux-mit-dem-redux-toolkit/",
+                           "https://kentcdodds.com/blog/application-state-management-with-react",
+                           "https://www.taniarascia.com/redux-react-guide/",
+                           "https://tsh.io/blog/react-state-management-react-hooks-vs-redux/"]}>
             Showing redux in an example is quite complicated due to it needs some more complex logic for showing its purposes. This example demonstrates a simple
             shopping cart and is inspired by the redux website. But we use the Redux toolkit library which allows us to use Redux in a more simpler way
             without writing dozens of boilerplate code which is normally needed to setup redux.<br/>

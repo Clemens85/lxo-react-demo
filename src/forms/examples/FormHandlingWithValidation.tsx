@@ -32,7 +32,9 @@ export default function FormHandlingWithValidation() {
 
   return (
       <div>
-        <ExampleInfo nr={2}>
+        <ExampleInfo nr={2} helpLinks={[
+            "https://github.com/jquense/yup",
+            "https://react-hook-form.com/get-started#SchemaValidation"]}>
           This example builds upon the above example, but includes also frontend validation using Yup, and shows how to create custom input elements.
         </ExampleInfo>
 

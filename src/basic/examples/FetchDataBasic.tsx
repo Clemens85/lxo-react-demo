@@ -7,7 +7,11 @@ import {User} from "../../shared/user/UserService";
 export default function FetchDataBasic() {
   return (
       <>
-        <ExampleInfo nr={2}>
+        <ExampleInfo nr={2} helpLinks={[
+            "https://blog.logrocket.com/lifecycle-methods-with-the-useeffect-hook/",
+            "https://softchris.github.io/books/react/render-props/",
+            "https://kentcdodds.com/blog/inversion-of-control"
+        ]}>
           <span>This example demonstrates data fetching when component is loading, by using an async hook.</span>
           <span>It furthermore shows how to separate fetching logic from display logic</span>
         </ExampleInfo>

@@ -32,7 +32,7 @@ export function FormHandlingBasic() {
 
   return (
       <div>
-        <ExampleInfo nr={1}>
+        <ExampleInfo nr={1} helpLinks={["https://react-hook-form.com/"]}>
           This example shows some very basic usage of react-hook-form library. <br/>
           If you try e.g. to save a user without name then a global error will be shown.
         </ExampleInfo>

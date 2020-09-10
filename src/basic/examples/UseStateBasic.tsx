@@ -17,7 +17,12 @@ export default function UseStateBasic() {
 
   return (
       <div>
-        <ExampleInfo nr={1}>
+        <ExampleInfo nr={1} helpLinks={[
+            "https://kentcdodds.com/blog/javascript-to-know-for-react",
+            "https://blog.logrocket.com/a-guide-to-usestate-in-react-ecb9952e406c/",
+            "https://www.valentinog.com/blog/hooks/",
+            "https://medium.com/better-programming/demystifying-react-hooks-a0b56a6254c2"
+        ]}>
           Basic demo showing simple usage of useState by using a component that is shown when a certain condition is met.
           It furthermore demonstrates how small (UI) components could be created (-> Callout)
         </ExampleInfo>

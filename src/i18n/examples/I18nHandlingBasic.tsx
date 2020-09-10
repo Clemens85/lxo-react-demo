@@ -10,9 +10,9 @@ export default function I18nHandlingBasic() {
 
   return (
       <div>
-        <ExampleInfo nr={1}>{t('common:explanation')}</ExampleInfo>
-        <div style={{margin: "15px"}}>{t('demo:hello_world')}</div>
-        <div style={{margin: "15px"}}>{t('demo:hello_world_interpolation', {usedLanguage: currentSelectedLanguage})}</div>
+        <ExampleInfo nr={1} helpLinks={["https://react.i18next.com/"]}>{t('common:explanation')}</ExampleInfo>
+          <div style={{margin: "15px"}}>{t('demo:hello_world')}</div>
+          <div style={{margin: "15px"}}>{t('demo:hello_world_interpolation', {usedLanguage: currentSelectedLanguage})}</div>
         <LanguageSwitch />
       </div>
 
