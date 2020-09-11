@@ -2,7 +2,6 @@ import {createReducer, createSelector, PayloadAction} from "@reduxjs/toolkit";
 import {RootState} from "../RootReducer";
 import { selectUser } from '../user/Actions';
 import { addToCart } from '../product/Actions';
-import {ProductInCart} from "../../../shared/product/ProductInCart";
 
 interface CartState {
   addedProductIds: string[];
