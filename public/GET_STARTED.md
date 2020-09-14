@@ -50,8 +50,8 @@ In order to use it, have a look at the examples in this example project or check
 
 Alternatives: 
 
+ - No lib when writing very simple forms OR when writing very complex and specialized / sophisticated forms
  - Formik: https://formik.org/docs/overview
- - No lib when writing very simple forms
 
 ## Adding form validation
 
