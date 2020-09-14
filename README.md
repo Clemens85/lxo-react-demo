@@ -17,6 +17,7 @@ Show the usage of (according also to this document (https://docs.google.com/docu
 * YUP as frontend validation library (integrated into React-Hook-Form)
 * React-Helmet for dynmaically rendering HTML titles for pages / routes
 * react-testing-library for testing React components
+* Redux with Redux toolkit library for simpler setup
 
 #### What it is NOT
 
