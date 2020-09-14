@@ -1,6 +1,6 @@
 import {ExampleInfo} from "../../shared/ExampleInfo";
 import React, {useState} from "react";
-import {UserDetails} from "../components/UserDetails";
+import UserDetails from "../components/UserDetails";
 import {UsersContainer} from "../components/UsersContainer";
 import {findEntityById} from "../../shared/Utils";
 import cloneDeep from "lodash/cloneDeep";
@@ -77,7 +77,7 @@ function UserTableRow({userWithTodo, onFetchTodos}: UserTableRowProps) {
   return (
       <tr style={{ verticalAlign: "top", borderBottom: "1px solid" }}>
         <td>
-          <UserDetails user={user}/>
+          <UserDetails {...user} />
         </td>
         <td style={{ textAlign: "left"}}>
           { hasTodos

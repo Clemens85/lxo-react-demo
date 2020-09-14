@@ -1,7 +1,8 @@
 import React from "react";
 import {User} from "../../shared/user/UserService";
 
-export const UserDetails: React.FC<{user: User}> = ({user}) => {
+
+export default function UserDetails(user: User) {
   const {name, email, gender} = user;
   return (
       <div>
@@ -10,4 +11,4 @@ export const UserDetails: React.FC<{user: User}> = ({user}) => {
         <div>{gender}</div>
       </div>
   );
-};
+}

@@ -7,11 +7,11 @@ export interface CalloutProps {
   show: boolean;
   /** Which severity to use? **/
   severity?: "SUCCESS" | "WARNING";
+  /** The content of the Callout **/
+  children: React.ReactNode;
 }
 
-export const Callout: React.FC<CalloutProps> = (props) => {
-
-  const {closeable, severity, show} = props;
+export const Callout = ({closeable = false, severity = 'SUCCESS', show, children} : CalloutProps) => {
 
   // Note: I would not necessarily consider this as a good solution. It might e.g. be worth lifting this state up depending on the requirements
   const [manuallyClosed, setManuallyClosed] = useState(false);
@@ -27,17 +27,11 @@ export const Callout: React.FC<CalloutProps> = (props) => {
   return (
     <div style={{ borderWidth: "1", borderStyle: "solid", borderColor: color, padding: 15, color: color}}>
       <p>
-        {props.children}
+        {children}
       </p>
       { closeable && <button onClick={handleClose}>Close forever</button> }
     </div>
   );
 };
-
-Callout.defaultProps = {
-  closeable: false,
-  severity: 'SUCCESS'
-};
-
 
 

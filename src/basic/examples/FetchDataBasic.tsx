@@ -1,6 +1,6 @@
 import React from 'react';
 import {ExampleInfo} from "../../shared/ExampleInfo";
-import {UserDetails} from "../components/UserDetails";
+import UserDetails from "../components/UserDetails";
 import {UsersContainer} from "../components/UsersContainer";
 import {User} from "../../shared/user/UserService";
 
@@ -24,7 +24,7 @@ export default function FetchDataBasic() {
 
 const SimpleUserList = ({users}: {users: User[]}) => {
   const userDetailsList = users
-                            .map(user => <UserDetails key={user.id} user={user} />);
+                            .map(user => <UserDetails key={user.id} {...user} />);
   return (
       <div>{userDetailsList}</div>
   );

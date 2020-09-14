@@ -1,7 +1,7 @@
 import React from "react";
 import {UsersContainer} from "../../../basic/components/UsersContainer";
 import {User} from "../../../shared/user/UserService";
-import {UserDetails} from "../../../basic/components/UserDetails";
+import UserDetails from "../../../basic/components/UserDetails";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../RootReducer";
 import { selectUser } from './Actions';
@@ -44,7 +44,7 @@ interface SelectableUserProps {
 const SelectableUser = ({user, selected, onUserClick}: SelectableUserProps) => {
   return (
       <div>
-        <UserDetails key={user.id} user={user} />
+        <UserDetails key={user.id} {...user} />
         <button onClick={onUserClick} disabled={selected} style={{ padding: '5px', marginTop: '5px'}}>Select for Shopping</button>
       </div>
   );
