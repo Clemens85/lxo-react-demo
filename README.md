@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The aim of this demo project is to show the usage of some recommended libraries / functions in the React ecosystem.
 
+_Please read [GET_STARTED.md](public/GET_STARTED.md) for how to start a new project._
+
 #### What's included
 
 Show the usage of (according also to this document (https://docs.google.com/document/d/11sZzEhMt3zZuJABcx_5v2tIHR9D_ZbC1hMDZ9Twfh9Q/edit?usp=sharing):
