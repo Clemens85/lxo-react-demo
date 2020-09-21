@@ -28,6 +28,15 @@ Check out the Docs for more infos on how to use Create React App: https://create
 
 You might also want to check out alternatives to using `create-react-app` if you want a more flexible build eg. if you're building a library: https://reactjs.org/docs/create-a-new-react-app.html
 
+## Docs
+
+There are some exmaples in this demo project showing how to basically use the recommended libraries with some additional
+links to the respective documentations. If you are new to React, then we recommend to firstly reading some
+basic tutorials about React. 
+
+A good starting point might be the official tutorial: https://reactjs.org/tutorial/tutorial.html
+
+
 ## Adding a router
 
 We recommend using `react-router` as routing library. To use it, save the dependency to your `package.json`:
