@@ -43,6 +43,7 @@ We recommend using `react-router` as routing library. To use it, save the depend
 
   ```
   $ npm install --save react-router-dom
+  $ npm install --save-dev @types/react-router-dom # install typescript type definitions
   ```
 
 In order to use it, have a look at the examples in this example project or check out the official documentation: https://reactrouter.com/web/guides/quick-start
@@ -119,6 +120,10 @@ We recommend using `redux` with `redux-toolkit` as state management library. To 
 
   ```
   $ npm install --save @reduxjs/toolkit
+  $ npm install --save react-redux
+  $ npm install --save redux-logger
+  $ npm install --save-dev @types/react-redux # install typescript type definitions
+  $ npm install --save-dev @types/redux-logger # install typescript type definitions  
   ```
 
 In order to use it, have a look at the examples in this example project or check out the official documentation: https://redux-toolkit.js.org/introduction/quick-start
@@ -134,3 +139,31 @@ The react resting library is included in `create-react-app` scaffolded apps but 
   ```
 
 In order to use it, have a look at the examples in this example project or check out the official documentation: https://testing-library.com/docs/react-testing-library/intro
+
+## Adding lodash
+
+Lodash contains many useful utility functions that are also used in our AngularJS applications already. To use it, save the dependency to your `package.json`:
+
+  ```
+  $ npm install --save lodash
+  $ npm install --save-dev @types/lodash # install typescript type definitions
+  ```
+
+**Caution:** When using lodash utility functions, please import them like this:
+  ```
+import cloneDeep from 'lodash/cloneDeep'; // Imports only the cloneDeep function, which can later just be used without using the "_"
+// import _ from "lodash"; // DON'T DO THIS! It imports the whole library!
+  ```
+
+Alternatively you may consider to use an additional babel/webpack plugin for using lodash to reduce bundle size.
+
+## Dynamic document heads (like HTML page title)
+
+We recommend using `react-helmet-async` if you want to dynamically change e.g. the HTML page title in different components. To use it, save the dependency to your `package.json`:
+
+  ```
+  $ npm install --save react-helmet-async
+  ```
+
+In order to use it, have a look at the examples in this example project or check out the official documentation: https://date-fns.org/
+
