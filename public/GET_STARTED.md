@@ -30,7 +30,7 @@ You might also want to check out alternatives to using `create-react-app` if you
 
 ## Docs
 
-There are some exmaples in this demo project showing how to basically use the recommended libraries with some additional
+There are some examples in this demo project showing how to basically use the recommended libraries with some additional
 links to the respective documentations. If you are new to React, then we recommend to firstly reading some
 basic tutorials about React. 
 
