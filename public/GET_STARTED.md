@@ -165,5 +165,5 @@ We recommend using `react-helmet-async` if you want to dynamically change e.g. t
   $ npm install --save react-helmet-async
   ```
 
-In order to use it, have a look at the examples in this example project or check out the official documentation: https://date-fns.org/
+In order to use it, have a look at the examples in this example project or check out the official documentation: https://github.com/staylor/react-helmet-async
 
